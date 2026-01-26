@@ -1,8 +1,8 @@
----
+﻿---
 layout: archive
 title: "分类"
 permalink: /categories/
-author_profile: false
+author_profile: true
 ---
 
 {% include group-by-array collection=site.posts field="categories" %}
@@ -14,3 +14,4 @@ author_profile: false
     {% include archive-single.html %}
   {% endfor %}
 {% endfor %}
+

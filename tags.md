@@ -1,8 +1,8 @@
----
+﻿---
 layout: archive
 title: "标签"
 permalink: /tags/
-author_profile: false
+author_profile: true
 ---
 
 {% include group-by-array collection=site.posts field="tags" %}
@@ -14,3 +14,4 @@ author_profile: false
     {% include archive-single.html %}
   {% endfor %}
 {% endfor %}
+

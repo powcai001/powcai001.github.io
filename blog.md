@@ -1,8 +1,12 @@
----
-layout: home
-title: "博客文章"
+﻿---
+layout: archive
+title: "博客"
 permalink: /blog/
 author_profile: true
 ---
 
-这里是我的长期写作站点，记录技术、职场、思考与复盘。
+{% include base_path.html %}
+
+{% for post in site.posts %}
+  {% include archive-single.html %}
+{% endfor %}
