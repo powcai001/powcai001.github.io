@@ -31,8 +31,8 @@ site_footer_text: "© 2026 powcai. Powered by Jekyll & Minimal Mistakes."
 ```html
 <footer class="page__footer">
   <div class="page__footer-copyright">
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. 
-    Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; 
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}.
+    Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
     <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</p>
   </div>
 </footer>
