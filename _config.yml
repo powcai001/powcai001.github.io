@@ -6,6 +6,7 @@ baseurl: ""
 remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-include-cache
+  - jekyll-feed  # RSS Feed 插件
 
 minimal_mistakes_skin: "default"
 
@@ -28,10 +29,34 @@ navigation:
   main:
     - title: "主页"
       url: /
+    - title: "Start Here"
+      url: /start/
     - title: "博客"
       url: /blog/
+    - title: "分类"
+      url: /categories/
+    - title: "标签"
+      url: /tags/
+    - title: "归档"
+      url: /archive/
     - title: "关于"
       url: /about/
+
+# Footer 配置
+footer:
+  links:
+    - label: "Feed"
+      icon: "fas fa-rss-square"
+      url: "/feed.xml"
+
+# 版权信息（如果需要自定义）
+site_footer_text: "© 2026 powcai. Powered by Jekyll & Minimal Mistakes."
+
+# 分享配置
+share: true
+
+# 相关文章配置（You May Also Enjoy）
+related: false  # 设置为 false 可禁用相关文章推荐
 
 defaults:
   - scope:
@@ -43,4 +68,4 @@ defaults:
       read_time: true
       comments: false
       share: true
-      related: true
+      related: false  # 禁用相关文章推荐
