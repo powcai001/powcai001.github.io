@@ -23,6 +23,16 @@ author:
       icon: "fab fa-github"
       url: "https://github.com/powcai001"
 
+# 导航菜单
+navigation:
+  main:
+    - title: "主页"
+      url: /
+    - title: "博客"
+      url: /blog/
+    - title: "关于"
+      url: /about/
+
 defaults:
   - scope:
       path: ""
