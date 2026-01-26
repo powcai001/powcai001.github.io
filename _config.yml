@@ -74,3 +74,8 @@ defaults:
       comments: false
       share: true
       related: false  # 禁用相关文章推荐
+  - scope:
+      path: "index.md"
+    values:
+      layout: home
+      author_profile: true
