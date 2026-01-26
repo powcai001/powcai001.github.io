@@ -8,6 +8,11 @@ plugins:
   - jekyll-include-cache
   - jekyll-feed  # RSS Feed 插件
 
+# Feed 配置
+feed:
+  enabled: true
+  path: feed.xml
+
 minimal_mistakes_skin: "default"
 
 markdown: kramdown
