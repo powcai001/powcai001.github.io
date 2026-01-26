@@ -1,0 +1,36 @@
+title: "powcai"
+description: "长期写作｜技术与思考"
+url: "https://powcai001.github.io"
+baseurl: ""
+
+remote_theme: "mmistakes/minimal-mistakes"
+plugins:
+  - jekyll-include-cache
+
+minimal_mistakes_skin: "default"
+
+markdown: kramdown
+permalink: /:categories/:title/
+paginate: 8
+paginate_path: /page:num/
+
+author:
+  name: "powcai"
+  avatar: "/assets/images/avatar.png"
+  bio: "长期写作｜技术与思考"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/powcai001"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
