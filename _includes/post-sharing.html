@@ -30,6 +30,13 @@
         {% continue %}
       {% endif %}
 
+      {% if share.type == 'WeChat' %}
+        <button class="btn text-start" {{ tooltip }} onclick="showWeChatShare('{{ url }}', '{{ title }}')">
+          <i class="fa-fw {{ share.icon }}"></i>
+        </button>
+        {% continue %}
+      {% endif %}
+
       {% assign link = share.link | replace: 'TITLE', title | replace: 'URL', url %}
 
       <a href="{{ link }}" target="_blank" rel="noopener" {{ tooltip }}>
@@ -50,3 +57,46 @@
     </button>
   </span>
 </div>
+
+<!-- 微信分享二维码弹窗 -->
+<div id="wechat-share-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; align-items: center; justify-content: center;">
+  <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; max-width: 300px; position: relative;">
+    <button onclick="closeWeChatShare()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+    <h3 style="margin-top: 0;">分享到微信</h3>
+    <p>请使用微信扫描二维码</p>
+    <div id="wechat-qrcode"></div>
+    <button onclick="closeWeChatShare()" style="margin-top: 15px; padding: 8px 20px; background: #07c160; color: white; border: none; border-radius: 5px; cursor: pointer;">关闭</button>
+  </div>
+</div>
+
+<script>
+function showWeChatShare(url, title) {
+  var modal = document.getElementById('wechat-share-modal');
+  var qrcodeDiv = document.getElementById('wechat-qrcode');
+  
+  // 检查是否在微信内置浏览器中
+  if (/MicroMessenger/i.test(navigator.userAgent)) {
+    // 在微信中，尝试使用微信分享
+    // 注意：这需要页面在微信中打开，且需要配置微信JS-SDK
+    alert('请在微信中点击右上角菜单选择"分享到朋友圈"或"发送给朋友"');
+    return;
+  }
+  
+  // 生成二维码（使用在线服务）
+  var qrcodeUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(url);
+  
+  qrcodeDiv.innerHTML = '<img src="' + qrcodeUrl + '" alt="微信分享二维码" style="max-width: 200px;">';
+  modal.style.display = 'flex';
+}
+
+function closeWeChatShare() {
+  document.getElementById('wechat-share-modal').style.display = 'none';
+}
+
+// 点击外部关闭
+document.getElementById('wechat-share-modal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeWeChatShare();
+  }
+});
+</script>

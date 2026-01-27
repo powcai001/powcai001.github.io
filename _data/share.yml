@@ -14,15 +14,35 @@ platforms:
     icon: "fab fa-telegram"
     link: "https://t.me/share/url?url=URL&text=TITLE"
 
+  # 中文社交平台
+  - type: Weibo
+    icon: "fab fa-weibo"
+    link: "https://service.weibo.com/share/share.php?title=TITLE&url=URL"
+
+  - type: WeChat
+    icon: "fab fa-weixin"
+    # 微信分享：在微信内置浏览器中会自动调用微信分享
+    # 非微信浏览器中，可以显示二维码让用户扫描
+    link: "javascript:void(0);"
+    # 注意：微信分享需要特殊处理，可能需要自定义 JavaScript
+
+  - type: QQ
+    icon: "fab fa-qq"
+    link: "https://connect.qq.com/widget/shareqq/index.html?url=URL&title=TITLE&summary=TITLE"
+
+  - type: QZone
+    icon: "fab fa-qq"
+    link: "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=URL&title=TITLE&summary=TITLE"
+
+  - type: Douban
+    icon: "fab fa-douban"
+    link: "https://www.douban.com/share/service?href=URL&name=TITLE"
+
   # Uncomment below if you need to.
   #
   # - type: Linkedin
   #   icon: "fab fa-linkedin"
   #   link: "https://www.linkedin.com/feed/?shareActive=true&shareUrl=URL"
-  #
-  # - type: Weibo
-  #   icon: "fab fa-weibo"
-  #   link: "https://service.weibo.com/share/share.php?title=TITLE&url=URL"
   #
   # - type: Mastodon
   #   icon: "fa-brands fa-mastodon"
